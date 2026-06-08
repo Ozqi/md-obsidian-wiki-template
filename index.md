@@ -23,17 +23,16 @@ reviewed_at: ""
 - [[AGENTS|Codex 维护规则]]
 - [[CLAUDE|Claude Code 维护规则]]
 
-## 主题目录
+## 提示词入口
 
-- [[Agent/index|Agent]]
-- [[存储系统/index|存储系统]]
-- [[推荐系统/index|推荐系统]]
-- [[编程语言/index|编程语言]]
-- [[概念百科/index|概念百科]]
-- [[工具/README|工具]]
-- [[项目/index|项目]]
-- [[归档/index|归档]]
-- [[想法/index|想法]]
+- `AGENTS.md`
+- `CLAUDE.md`
+- `.agents/wiki-worker.md`
+- `.agents/lint-agent.md`
+- `.agents/notion-agent.md`
+- `.agents/notion-memory.md`
+- `.claude/agents/`
+- `.agents/skills/`
 
 ## 参考
 

@@ -14,11 +14,11 @@ reviewed_at: ""
 
 # Obsidian LLM Wiki Template
 
-面向 Agent 协作的 Obsidian 知识库模板：把资料、代码仓库、网页、问答和项目理解沉淀为可追溯、可互链、可巡检的 Markdown wiki。
+面向 Agent 协作的 Obsidian 知识库提示词模板：提供维护规则、Agent 配置、Claude Code subagent、Obsidian skills、raw source 队列和辅助脚本。
 
 ## 入口
 
-- [[index|全局入口]]：主题导航。
+- [[index|全局入口]]：提示词与模板入口。
 - [[dashboard|人工 Review 看板]]：待审文档入口。
 - [[log|全局知识库变更日志]]：重要 ingest、schema、lint、结构变更。
 - [[raw_sources/index|Raw Sources]]：资料 ingest TODO 和原始资料入口。
@@ -37,11 +37,22 @@ reviewed_at: ""
 ## 使用方式
 
 1. 克隆本仓库为新 vault。
-2. 修改 `.agents/wiki-worker.md` 的路由表，使目录和主题匹配你的知识库。
+2. 复制或保留全部提示词文件：`AGENTS.md`、`CLAUDE.md`、`.agents/`、`.claude/agents/`。
 3. 修改 `.agents/notion-memory.md`，填入你的 Notion workspace / database / page 入口；不用 Notion 可保留空表。
 4. 处理资料前先登记到 [[raw_sources/index]]。
 5. 写入知识时默认调用 Wiki Worker；巡检时调用 Lint Agent。
 6. 人工审阅后把页面 frontmatter 的 `human_reviewed` 改成 `true`。
+
+## 提示词文件
+
+- `AGENTS.md`：Codex 仓库级规则。
+- `CLAUDE.md`：Claude Code 仓库级规则。
+- `.agents/wiki-worker.md`：ingest、QA、路由、受控增删改查。
+- `.agents/lint-agent.md`：结构、来源、语法、风格密度巡检。
+- `.agents/notion-agent.md`：Notion 对接规则。
+- `.agents/notion-memory.md`：Notion 本地记忆模板。
+- `.claude/agents/*.md`：Claude Code subagent wrapper。
+- `.agents/skills/`：Obsidian Markdown、Bases、Canvas、CLI、网页解析等技能提示词。
 
 ## 规范
 
