@@ -1,0 +1,21 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Runtime state
+tmp/md-outline-index/*
+tmp/wiki-lint/*
+!tmp/md-outline-index/.gitkeep
+!tmp/wiki-lint/.gitkeep
+
+# Obsidian runtime workspace/cache state
+.obsidian/workspace.json
+.obsidian/backlink.json
+
+# External code mirrors are raw sources, kept local by default
+raw_sources/repos/*
+!raw_sources/repos/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
