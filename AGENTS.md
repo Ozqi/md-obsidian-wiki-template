@@ -53,7 +53,11 @@ reviewed_at: ""
 
 不再新增 `AI-GENERATED-CONTENT` 注释块、正文审阅 checklist、`ai_event`、`ai_generated_at`、`ai_review_status`。旧字段可暂时保留；下次编辑该文件时迁移为 `created`、`updated`、`ai_model`、`human_reviewed`、`reviewed_at`。
 
-AI 改动普通笔记时：更新 `updated`，设置 `content_origin: mixed` 或 `ai`，写入 `ai_model`，并把 `human_reviewed` 置为 `false`。人工审阅后再改为 `true`。
+AI 改动普通笔记时，不手写或猜测文档属性；正文写完后运行 `scripts/sync_note_metadata.py <文件> --index --ai-model GPT-5`。该脚本负责补齐/更新 frontmatter、把 `human_reviewed` 置为 `false`，并生成 `tmp/note-metadata-index.json` 供 Agent 感知。
+
+Git 提交前由 `.githooks/pre-commit` 自动运行 `scripts/sync_note_metadata.py --staged --stage --index`。本仓库应保持 `git config core.hooksPath .githooks`。
+
+人工审阅后再把 `human_reviewed` 改为 `true` 并填写 `reviewed_at`；若审阅后继续改正文，hook 会重新置为未审。
 
 ## 3. 元数据与来源归位
 
@@ -122,6 +126,12 @@ Mermaid 图优先表达层级和归属，不追求横向铺开。默认使用 `f
 - 根据 `frontmatter.end_line` 区分属性区和正文。
 
 索引文件属于 `tmp/` 临时状态，不写入 wiki 结论；原 Markdown 改动后必须重新生成。
+
+### 元数据索引
+
+`tmp/note-metadata-index.json` 是 Agent 读取全库页面属性的临时索引，由 `scripts/sync_note_metadata.py --index` 生成。需要按标题、标签、别名、更新时间、审阅状态、AI 参与状态选择页面时，优先读取该索引；索引过期或不存在时先重新生成。
+
+该索引属于 `tmp/` 临时状态，不写入 wiki 结论，不替代正文语义检索。
 
 ### raw_sources / tmp
 

@@ -5,6 +5,7 @@
 # Runtime state
 tmp/md-outline-index/*
 tmp/wiki-lint/*
+tmp/note-metadata-index.json
 !tmp/md-outline-index/.gitkeep
 !tmp/wiki-lint/.gitkeep
 

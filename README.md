@@ -57,7 +57,7 @@ reviewed_at: ""
 ## 规范
 
 - 正文只插入知识条目，不写聊天式总结。
-- 元数据写 frontmatter：`created`、`updated`、`ai_model`、`human_reviewed`、`reviewed_at`。
+- 元数据由 `scripts/sync_note_metadata.py` 和 `.githooks/pre-commit` 维护。
 - 来源放文末 `## 参考`。
 - 内部链接用 Obsidian wikilink。
 - Mermaid 图优先用纵向目录树式布局。
@@ -67,3 +67,10 @@ reviewed_at: ""
 
 - `scripts/md_outline_index.py <file>`：生成 Markdown 标题树 JSON，用于插入定位。
 - `scripts/review_dashboard.py`：刷新 [[dashboard]]。
+- `scripts/sync_note_metadata.py --index`：同步 note frontmatter，生成 `tmp/note-metadata-index.json`。
+
+## Hook
+
+```bash
+git config core.hooksPath .githooks
+```
