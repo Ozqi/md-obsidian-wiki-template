@@ -1,7 +1,7 @@
 ---
 title: 全局入口
-created: 2026-06-08
-updated: 2026-06-08
+created: 2026-06-09
+updated: 2026-06-09
 tags:
   - wiki/index
 aliases:
@@ -33,8 +33,3 @@ reviewed_at: ""
 - `.agents/notion-memory.md`
 - `.claude/agents/`
 - `.agents/skills/`
-
-## 参考
-
-- `.agents/wiki-worker.md`
-- `.agents/lint-agent.md`

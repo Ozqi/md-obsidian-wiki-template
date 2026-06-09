@@ -1,7 +1,7 @@
 ---
 title: Raw Sources
-created: 2026-06-08
-updated: 2026-06-08
+created: 2026-06-09
+updated: 2026-06-09
 tags:
   - wiki/raw-sources
 aliases:
@@ -40,16 +40,3 @@ reviewed_at: ""
 - [ ] 示例资料 | 来源：待填 | 写入：[[目标页]]
 
 ### Lint 待处理
-
-## 组织
-
-```text
-raw_sources/
-├── index.md
-├── web/
-├── repos/
-├── papers/
-├── books/
-├── meetings/
-└── datasets/
-```

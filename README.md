@@ -1,7 +1,7 @@
 ---
 title: Obsidian LLM Wiki Template
-created: 2026-06-08
-updated: 2026-06-08
+created: 2026-06-09
+updated: 2026-06-09
 tags:
   - project/template
 aliases:
@@ -67,10 +67,3 @@ reviewed_at: ""
 
 - `scripts/md_outline_index.py <file>`：生成 Markdown 标题树 JSON，用于插入定位。
 - `scripts/review_dashboard.py`：刷新 [[dashboard]]。
-
-## 初始化
-
-```bash
-git init
-python3 scripts/review_dashboard.py
-```

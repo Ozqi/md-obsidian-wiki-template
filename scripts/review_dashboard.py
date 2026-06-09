@@ -163,7 +163,7 @@ def render(items: list[dict[str, Any]]) -> str:
     lines = [
         "---",
         "title: 人工 Review 看板",
-        "created: 2026-06-08",
+        "created: 2026-06-02",
         f"updated: {generated_date}",
         "tags:",
         "  - wiki/dashboard",
